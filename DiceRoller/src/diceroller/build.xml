@@ -5,6 +5,7 @@
        <jar destfile="DiceRoller.jar" basedir="bin/" includes="*.class">
         	<manifest>
   				<attribute name="Main-Class" value ="diceroller.Main"/>
+        		<attribute name="Class-Path" value ="bin/"/>
         	</manifest>
        </jar>
   	</target>
