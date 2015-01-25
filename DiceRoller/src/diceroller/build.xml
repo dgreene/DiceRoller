@@ -2,7 +2,7 @@
 <!-- Configuration of the Ant build system to generate a Jar file --> 
 <project name="DiceRoller" default="CreateJar" basedir=".">
  	<target name="CreateJar" description="Create Jar file">
-       <jar destfile="DiceRoller.jar" basedir="bin/" includes="*.class">
+       <jar destfile="DiceRoller.jar" basedir="bin/diceroller" includes="*.class">
         	<manifest>
   				<attribute name="Main-Class" value ="diceroller.Main"/>
         		<attribute name="Class-Path" value ="bin/"/>
