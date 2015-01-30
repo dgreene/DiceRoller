@@ -19,11 +19,9 @@ public class DiceRoller {
 		Random rng = new Random();
 		for (int idx = 1; idx <= numDice; ++idx){
 			int rollValue = rng.nextInt(numSides);
-			if (idx != numSides){
 				System.out.println("Congratulations! you rolled a:");
 				System.out.println(rollValue);
 				System.out.println(" ");
-			}
 		}
 
 	}
