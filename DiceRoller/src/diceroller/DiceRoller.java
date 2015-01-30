@@ -18,10 +18,10 @@ public class DiceRoller {
 	public void roll(int numDice, int numSides){
 		Random rng = new Random();
 		for (int idx = 1; idx <= numDice; ++idx){
-			int rollValue = rng.nextInt(numSides);
-				System.out.println("Congratulations! you rolled a:");
-				System.out.println(rollValue);
-				System.out.println(" ");
+			int rollValue = rng.nextInt(numSides); //number between 0 and numSides-1
+			System.out.println("Congratulations! you rolled a:");
+			System.out.println(rollValue+1); //temp workaround to include numSides and 1
+			System.out.println(" ");
 		}
 
 	}
