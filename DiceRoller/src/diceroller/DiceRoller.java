@@ -1,4 +1,5 @@
 package diceroller;
+import java.util.Random;
 /**
  * Handles random number generation
  */
@@ -14,9 +15,16 @@ public class DiceRoller {
 	 * @input int numSides
 	 * @output int Results
 	 */
-	public int roll(int numDice, int numSides){
-		int result=-1;
+	public void roll(int numDice, int numSides){
+		Random rng = new Random();
+		for (int idx = 1; idx <= numDice; ++idx){
+			int rollValue = rng.nextInt(numSides);
+			if (idx != numSides){
+				System.out.println("Congratulations! you rolled a:");
+				System.out.println(rollValue);
+				System.out.println(" ");
+			}
+		}
 
-		return result;
 	}
 }

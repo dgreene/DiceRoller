@@ -36,10 +36,10 @@ public class Main {
         			
         			int[] rollValues=io.parseLine(UserInput); //incomplete
         			//roller.roll(rollValues[0], rollValues[1]);		//incomplete
-        			int result=roller.roll(1,6);
+        			roller.roll(1,20);
         			
-        			System.out.println("Congratulations! you rolled a:");
-        			System.out.println(result);
+        			//System.out.println("Congratulations! you rolled a:");
+        			//System.out.println(result);
         		}
         		     		
         		//catch-all case for unrecognized command
