@@ -1,13 +1,15 @@
 package diceroller;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Main {
 
-	public static void main(String[] args){
+	public static void main(String[] args)throws Exception{
 		// TODO Auto-generated method stub
-		
+				
 		System.out.println("Welcome to the RPG Dice Roller!");
 		System.out.println("Type help for a list of commands");
+		PrintWriter writer = new PrintWriter("RollLog.txt","UTF-8");
 		DiceRoller roller = new DiceRoller();
 		IOManager io = new IOManager();		
 		
@@ -37,7 +39,7 @@ public class Main {
         			int[] rollValues={0,0};
         			boolean success=true;
         			try{
-        				rollValues=io.parseRollCommand(UserInput.substring(5)); 
+        				rollValues=  io.parseRollCommand(UserInput.substring(5)); 
         			}
         			catch(NumberFormatException numExcept){
             			System.out.println("Inavlid roll parameters, try XdY");
@@ -46,6 +48,8 @@ public class Main {
         			if(success){
             			int rollTotal=roller.roll(rollValues[0],rollValues[1]);
             			System.out.println("Congratulations! your total is:"+(rollTotal));
+            			writer.println("Result of "+rollValues[0]+"d"+rollValues[1]+" = "+ rollTotal);
+            			
         			}
         		}
         		     		
@@ -60,6 +64,7 @@ public class Main {
         		cont=false;
         	}
         }
+        writer.close();
         System.out.println("Quitting Dice Roller");
         try{
         	Thread.sleep(1000);
