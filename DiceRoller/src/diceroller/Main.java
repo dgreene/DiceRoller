@@ -31,15 +31,20 @@ public class Main {
         			System.out.println("help = See this again!");
         			System.out.println("**********");
         		}
-        		else if(UserInput.startsWith("roll")){
+        		else if(UserInput.startsWith("roll ")){
         			System.out.println("rolling...");
-        			
-        			int[] rollValues=io.parseLine(UserInput); //incomplete
-        			//roller.roll(rollValues[0], rollValues[1]);		//incomplete
-        			roller.roll(1,20);
-        			
-        			//System.out.println("Congratulations! you rolled a:");
-        			//System.out.println(result);
+        			int[] rollValues={0,0};
+        			boolean success=true;
+        			try{
+        				rollValues=io.parseRollCommand(UserInput.substring(5)); 
+        			}
+        			catch(NumberFormatException numExcept){
+            			System.out.println("Inavlid roll parameters, try XdY");
+            			success=false;
+        			}
+        			if(success){
+            			roller.roll(rollValues[0],rollValues[1]);
+        			}
         		}
         		     		
         		//catch-all case for unrecognized command

@@ -17,12 +17,12 @@ public class DiceRoller {
 	 */
 	public void roll(int numDice, int numSides){
 		Random rng = new Random();
+		int totalValue=0;
 		for (int idx = 1; idx <= numDice; ++idx){
-			int rollValue = rng.nextInt(numSides); //number between 0 and numSides-1
-			System.out.println("Congratulations! you rolled a:");
-			System.out.println(rollValue+1); //temp workaround to include numSides and 1
-			System.out.println(" ");
+			int rollValue = rng.nextInt(numSides)+1; //number between 0 and numSides-1
+			totalValue=totalValue+rollValue;
+			System.out.println("Roll #"+idx+" was a "+rollValue);
 		}
-
+		System.out.println("Congratulations! your total is:"+(totalValue));
 	}
 }

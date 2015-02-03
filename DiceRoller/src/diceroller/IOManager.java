@@ -37,10 +37,21 @@ public class IOManager{
 	 * @param input string
 	 */
 	
-	public int[] parseLine(String input){
-		int[] output = new int[2];
-		
-		
+	public int[] parseRollCommand(String input) throws NumberFormatException{
+		int[] output = {0,0};
+		if(input.length()>2){
+			String[] splitInput=input.split("d");
+			try{
+			int numDice=Integer.parseInt(splitInput[0]);
+			int numSides=Integer.parseInt(splitInput[1]);
+			output[0]=numDice;
+			output[1]=numSides;
+			}
+			catch(NumberFormatException forExecpt){
+				throw forExecpt;
+			}
+
+		}	
 		return output;
 	}
 }
