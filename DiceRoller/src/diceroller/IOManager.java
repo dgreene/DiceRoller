@@ -22,12 +22,10 @@ public class IOManager{
 	 * @throws IOException
 	 */
 	public String getLine() throws IOException{
-		System.out.println("Please Enter a Command:");
 		String result= "";
 		try{
 			result = reader.readLine();
 		}catch(IOException IOexcept){
-			System.err.println("IOException when reading line");
 			throw IOexcept;
 		}
 		return result;	
@@ -40,12 +38,12 @@ public class IOManager{
 	public int[] parseRollCommand(String input) throws NumberFormatException{
 		int[] output = {0,0};
 		if(input.length()>2){
-			String[] splitInput=input.split("d");
+			String[] splitInput=input.split("d",2);
 			try{
-			int numDice=Integer.parseInt(splitInput[0]);
-			int numSides=Integer.parseInt(splitInput[1]);
-			output[0]=numDice;
-			output[1]=numSides;
+				int numDice=Integer.parseInt(splitInput[0]);
+				int numSides=Integer.parseInt(splitInput[1]);
+				output[0]=numDice;
+				output[1]=numSides;
 			}
 			catch(NumberFormatException forExecpt){
 				throw forExecpt;

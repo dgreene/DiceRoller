@@ -15,7 +15,7 @@ public class DiceRoller {
 	 * @input int numSides
 	 * @output int Results
 	 */
-	public void roll(int numDice, int numSides){
+	public int roll(int numDice, int numSides){
 		Random rng = new Random();
 		int totalValue=0;
 		for (int idx = 1; idx <= numDice; ++idx){
@@ -23,6 +23,6 @@ public class DiceRoller {
 			totalValue=totalValue+rollValue;
 			System.out.println("Roll #"+idx+" was a "+rollValue);
 		}
-		System.out.println("Congratulations! your total is:"+(totalValue));
+		return totalValue;
 	}
 }

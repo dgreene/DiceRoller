@@ -17,6 +17,7 @@ public class Main {
         {
         	
         	try{
+        		System.out.println("Please Enter a Command:");
         		String UserInput=io.getLine();
         		//Quit the program
         		if(UserInput.equalsIgnoreCase("q")){
@@ -43,7 +44,8 @@ public class Main {
             			success=false;
         			}
         			if(success){
-            			roller.roll(rollValues[0],rollValues[1]);
+            			int rollTotal=roller.roll(rollValues[0],rollValues[1]);
+            			System.out.println("Congratulations! your total is:"+(rollTotal));
         			}
         		}
         		     		
@@ -54,6 +56,7 @@ public class Main {
         		}
         	}
         	catch(IOException IOexcept){
+    			System.err.println("IOException when reading line");
         		cont=false;
         	}
         }
